@@ -15,6 +15,7 @@ function divide(a, b) {
 }
 
 function operate(a, b, operator) {
+  console.log(`${a} ${operator} ${b}`)
   switch (operator) {
     case '+':
       return add(a, b);
@@ -34,6 +35,14 @@ function operate(a, b, operator) {
   }
 }
 
+function reset() {
+  currentNum = 'firstNum';
+  firstNum = '';
+  secondNum = '';
+  result = '';
+  display.value = '';
+}
+
 let firstNum = '';
 let secondNum = '';
 let operator = '';
@@ -47,25 +56,21 @@ const equalsButton = document.querySelector('.equalsButton')
 const clearButton = document.querySelector('.clearButton');
 
 numpad.addEventListener('click', (event) => {
+  
+  if (firstNum == result && secondNum == '' && operator == '') {
+    reset()
+  }
   if (currentNum == 'firstNum') {
     firstNum += event.target.value;
-    console.log(firstNum);
     display.value = firstNum;
   }
   else if (currentNum == 'secondNum') {
     secondNum += event.target.value;
-    console.log(secondNum);
     display.value = secondNum;
   }
 })
 
-clearButton.addEventListener('click', (event) => {
-  currentNum = 'firstNum';
-  firstNum = '';
-  secondNum = '';
-  result = '';
-  display.value = '';
-})
+clearButton.addEventListener('click', reset)
 
 operators.addEventListener('click', (event) => {
   if (secondNum == '') {
@@ -93,5 +98,6 @@ equalsButton.addEventListener('click', (event) => {
     display.value = Math.round(result * 100) / 100;
     firstNum = display.value;
     secondNum = '';
+    operator = '';
   }
 })
