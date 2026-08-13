@@ -61,6 +61,14 @@ numpad.addEventListener('click', (event) => {
   }
 })
 
+clearButton.addEventListener('click', (event) => {
+  currentNum = 'firstNum';
+  firstNum = '';
+  secondNum = '';
+  result = '';
+  display.value = '';
+})
+
 operators.addEventListener('click', (event) => {
   if (secondNum == '') {
     operator = event.target.value;
