@@ -7,9 +7,6 @@ function subtract(a, b) {
 }
 
 function multiply(a, b) {
-  if (b == '') {
-    return a;
-  }
   return a * b;
 }
 
@@ -46,6 +43,7 @@ let result = '';
 const display = document.querySelector('.displayInput');
 const numpad = document.querySelector('.numpad');
 const operators = document.querySelector('.operators');
+const equalsButton = document.querySelector('.equalsButton')
 const clearButton = document.querySelector('.clearButton');
 
 numpad.addEventListener('click', (event) => {
@@ -74,13 +72,26 @@ operators.addEventListener('click', (event) => {
     operator = event.target.value;
     currentNum = 'secondNum';
   }
-  if (secondNum !== '') {
-    display.value = operate(firstNum, secondNum, operator)
-    result = display.value;
+  else if (secondNum == '0' && event.target.value == '/') {
+    secondNum = '';
+    display.value = "Math error: Can't divide by 0"
+  }
+  else if (secondNum !== '') {
+    result = operate(firstNum, secondNum, operator);
+    display.value = Math.round(result * 100) / 100;
     firstNum = result;
     secondNum = '';
     currentNum = 'secondNum'
     
     operator = event.target.value;
+  }
+})
+
+equalsButton.addEventListener('click', (event) => {
+  if (currentNum === 'secondNum' && secondNum !== '') {
+    result = operate(firstNum, secondNum, operator);
+    display.value = Math.round(result * 100) / 100;
+    firstNum = display.value;
+    secondNum = '';
   }
 })
