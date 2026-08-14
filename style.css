@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    height: 64vh;
+    width: 48vh;
+}
+
+.displayInput {
+    text-align: right;
+    background-color: #C4D0C6;
+    height: 48px;
+    font-size: 20px;
+    font-weight: 500;
+    border: 1px;
+    border-radius: 4px;
+}
+
+.container {
+    display: flex;
+    gap: 4px;
+}
+
+.numpadClear, .numpad,  .operatorsEquals, .operators {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+button {
+    height: 4rem;
+    width: 4rem;
+    font-size: 24px;
+    font-weight: 450;
+    border: 1px;
+    border-radius: 12px;
+}
