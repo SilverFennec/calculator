@@ -37,3 +37,7 @@ button {
     border: 1px;
     border-radius: 12px;
 }
+
+button:active {
+    background-color: #DBDBDB;
+}
