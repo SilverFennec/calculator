@@ -56,7 +56,9 @@ const equalsButton = document.querySelector('.equalsButton')
 const clearButton = document.querySelector('.clearButton');
 
 numpad.addEventListener('click', (event) => {
-  
+  if (display.value.includes('.') && event.target.value == '.') {
+    return 0;
+  }
   if (firstNum == result && secondNum == '' && operator == '') {
     reset()
   }
