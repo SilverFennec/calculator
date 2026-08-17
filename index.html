@@ -10,41 +10,43 @@
 </head>
 
 <body>
+  <div class="container">
+    
   <div class="display">
     <input readonly class="displayInput" value="">
   </div>
   
-  <div class="container">
+  <div class="numpadAndOperators">
     
-  <div class="numpadClear">
-  <div>
+  <div class="numpadAndClear">
+  <div class="clearAndBackspace">
     <button class="clearButton">C</button>
     <button class="backspaceButton">CE</button>
   </div>
   <div class="numpad">
     <div class="numRow1">
-      <button value="7">7</button>
-      <button value="8">8</button>
-      <button value="9">9</button>
+      <button value="7" id="seven">7</button>
+      <button value="8" id="eight">8</button>
+      <button value="9" id="nine">9</button>
     </div>
     <div class="numRow2">
-      <button value="4">4</button>
-      <button value="5">5</button>
-      <button value="6">6</button>
+      <button value="4" id="four">4</button>
+      <button value="5" id="five">5</button>
+      <button value="6" id="six">6</button>
     </div>
     <div class="numRow3">
-      <button value="1">1</button>
-      <button value="2">2</button>
-      <button value="3">3</button>
+      <button value="1" id="one">1</button>
+      <button value="2" id="two">2</button>
+      <button value="3" id="three">3</button>
     </div>
     <div class="numRow4">
-      <button value="0">0</button>
-      <button value=".">.</button>
+      <button value="0" id="zero">0</button>
+      <button value="." id="decimal">.</button>
     </div>
   </div>
   </div>
   
-  <div class="operatorsEquals">
+  <div class="operatorsAndEqualsButton">
     <div class="operators">
       <button value="/" class="divideButton">÷</button>
       <button value="*" class="multipleButton">×</button>
@@ -55,6 +57,8 @@
       <button value="=" class="equalsButton">=</button>
     </div>
   </div>
+  </div>
+  
   </div>
   <script src="main.js"></script>
 </body>

@@ -1,43 +1,129 @@
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    height: 64vh;
-    width: 48vh;
+/* Josh Comeau's reset */
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-.displayInput {
-    text-align: right;
-    background-color: #C4D0C6;
-    height: 48px;
-    font-size: 20px;
-    font-weight: 500;
-    border: 1px;
-    border-radius: 4px;
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Increase line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* styling */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #42445A;
 }
 
 .container {
-    display: flex;
-    gap: 4px;
+  background-color: #52545f;
+  border-radius: 20px;
+  padding: 24px;
 }
 
-.numpadClear, .numpad,  .operatorsEquals, .operators {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+.display {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(106, 171, 96, 1);
+  padding: 18px;
+  margin-bottom: 20px;
+  border-radius: 8px;
 }
 
-button {
-    height: 4rem;
-    width: 4rem;
-    font-size: 24px;
-    font-weight: 450;
-    border: 1px;
-    border-radius: 12px;
+.displayInput {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  text-align: right;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: 700;
 }
 
-button:active {
-    background-color: #DBDBDB;
+.numpadAndOperators {
+  display: flex;
+  gap: 4px;
+  justify-content: space-evenly;
+}
+
+.numpadAndClear, .numpad, .operatorsAndEqualsButton, .operators {
+  display: flex;
+  flex-direction: column;
+}
+
+.numpadAndClear {
+  flex-grow: 3;
+}
+
+.clearButton, .backspaceButton {
+  color: #D9D9D9;
+  background-color: #383838;
+  border: 1px solid;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  
+  height: 56px;
+  width: 64px;
+}
+
+.clearButton {
+  color: #DF1919;
+}
+
+.numpad button, .operatorsAndEqualsButton button {
+  height: 56px;
+  width: 72px;
+  margin: 2px;
+  font-size: 24px;
+  font-weight: 450;
+  border: 1px;
+  border-radius: 12px;
+}
+
+.operators button {
+  color: #FFFFFF;
+  background-color: #42AED9;
+}
+
+.equalsButton {
+  color: #FFFFFF;
+  background: #F87C15;
+}
+
+.numpad button:active {
+  background-color: #DBDBDB;
 }
