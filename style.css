@@ -127,3 +127,12 @@ body {
 .numpad button:active {
   background-color: #DBDBDB;
 }
+
+.numRow4 {
+  display: flex;
+  gap: 2px;
+}
+
+#zero {
+  flex-grow: 1;
+}
