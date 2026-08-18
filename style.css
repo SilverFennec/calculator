@@ -126,6 +126,17 @@ body {
 
 .numpad button:active {
   background-color: #DBDBDB;
+  transform: translateY(2px);
+}
+
+.operators button:active {
+  background-color: #2E9AC5;
+  transform: translateY(2px);
+}
+
+.equalsButton:active {
+  background-color: #E46801;
+  transform: translateY(2px);
 }
 
 .numRow4 {
