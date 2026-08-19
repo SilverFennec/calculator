@@ -56,6 +56,9 @@ const equalsButton = document.querySelector('.equalsButton')
 const clearButton = document.querySelector('.clearButton');
 
 numpad.addEventListener('click', (event) => {
+  if (event.target.value == undefined) {
+    return 1;
+  }
   if (display.value.includes('.') && event.target.value == '.') {
     return 0;
   }
@@ -75,6 +78,9 @@ numpad.addEventListener('click', (event) => {
 clearButton.addEventListener('click', reset)
 
 operators.addEventListener('click', (event) => {
+  if (event.target.value == undefined) {
+  return 1;
+  }
   if (secondNum == '') {
     operator = event.target.value;
     currentNum = 'secondNum';
