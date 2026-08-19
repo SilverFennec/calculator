@@ -86,7 +86,7 @@ operators.addEventListener('click', (event) => {
     currentNum = 'secondNum';
   }
   else if (secondNum == '0' && event.target.value == '/') {
-    secondNum = '';
+    reset();
     display.value = "Math error: Can't divide by 0"
   }
   else if (secondNum !== '') {
@@ -101,7 +101,11 @@ operators.addEventListener('click', (event) => {
 })
 
 equalsButton.addEventListener('click', (event) => {
-  if (currentNum === 'secondNum' && secondNum !== '') {
+  if (secondNum == '0' && operator == '/') {
+  reset();
+  display.value = "Math error: Can't divide by 0"
+  }
+  else if (currentNum === 'secondNum' && secondNum !== '') {
     result = operate(firstNum, secondNum, operator);
     display.value = Math.round(result * 100) / 100;
     firstNum = display.value;
