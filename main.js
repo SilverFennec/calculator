@@ -54,6 +54,7 @@ const numpad = document.querySelector('.numpad');
 const operators = document.querySelector('.operators');
 const equalsButton = document.querySelector('.equalsButton')
 const clearButton = document.querySelector('.clearButton');
+const backspaceButton = document.querySelector('.backspaceButton');
 
 numpad.addEventListener('click', (event) => {
   if (event.target.value == undefined) {
@@ -76,6 +77,20 @@ numpad.addEventListener('click', (event) => {
 })
 
 clearButton.addEventListener('click', reset)
+
+backspaceButton.addEventListener('click', (event) => {
+  display.value = display.value.slice(0, -1);
+  
+  if (firstNum == result && secondNum == '') {
+    firstNum = display.value;
+  }
+  else if (currentNum == 'firstNum') {
+    firstNum = display.value;
+  }
+  else if (currentNum == 'secondNum') {
+    secondNum = display.value;
+  }
+})
 
 operators.addEventListener('click', (event) => {
   if (event.target.value == undefined) {
